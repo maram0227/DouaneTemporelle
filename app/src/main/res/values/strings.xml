@@ -1,0 +1,27 @@
+<resources>
+    <string name="afficher_nom">Nom : %1$s</string>
+    <string name="afficher_age">Age temporel : %1$d ans</string>
+    <string name="afficher_motif">Motif : %1$s</string>
+    <string name="app_name">DouaneTemporelle</string>
+
+    <string name="titre_app">DOUANE TEMPORELLE</string>
+    <string name="nom_voyageur">Nom du voyageur :</string>
+    <string name="hint_nom">Entrer votre nom</string>
+    <string name="annee_naissance">Année de naissance :</string>
+    <string name="hint_naissance">Example : 2000</string>
+    <string name="annee_destination">Année de destination :</string>
+    <string name="hint_destination">Example : 2050</string>
+    <string name="motif_voyage">Motif du voyage :</string>
+    <string name="btn_inspecter">Inspecter le profil</string>
+
+    <string name="titre_passeport">PASSEPORT TEMPOREL</string>
+    <string name="nom_label">Nom :</string>
+    <string name="age_label">Age temporel :</string>
+    <string name="motif_label">Motif :</string>
+    <string name="btn_approuver">Approuver le saut temporel</string>
+    <string name="btn_refuser">Refuser (Risque de paradoxe)</string>
+    <string name="photo_passeport">Photo du passeport</string>
+    <string name="btn_nouveau">Nouveau voyageur</string>
+    <string name="message_approuve">Bon voyage %1$s</string>
+    <string name="message_refuse">%1$s est en état d\'arrestation temporelle</string>
+</resources>

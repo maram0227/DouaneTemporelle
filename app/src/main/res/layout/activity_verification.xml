@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_verification_mf"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:background="#F2F5FA">
+
+    <ImageView
+        android:id="@+id/img_passeport_mf"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3"
+        android:src="@android:drawable/ic_menu_myplaces"
+        android:scaleType="centerInside"
+        android:contentDescription="@string/photo_passeport"/>
+
+    <RelativeLayout
+        android:id="@+id/layout_infos_mf"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.7"
+        android:padding="10dp"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:id="@+id/tv_titre_verif_mf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titre_passeport"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#172B4D" />
+
+        <TextView
+            android:id="@+id/tv_nom_verif_mf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_titre_verif_mf"
+            android:layout_marginTop="25dp"
+            android:text="@string/nom_label"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_age_verif_mf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_nom_verif_mf"
+            android:layout_marginTop="15dp"
+            android:text="@string/age_label"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_motif_verif_mf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_age_verif_mf"
+            android:layout_marginTop="15dp"
+            android:text="@string/motif_label"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_approuver_mf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_motif_verif_mf"
+            android:layout_marginTop="30dp"
+            android:text="@string/btn_approuver"/>
+        <Button
+            android:id="@+id/btn_refuser_mf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_approuver_mf"
+            android:layout_marginTop="10dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
