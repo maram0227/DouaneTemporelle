@@ -53,43 +53,59 @@ public class MainActivity extends AppCompatActivity {
             String d = destination.getText().toString().trim();
             String m = motif.getSelectedItem().toString();
 
+            // 5. التحقق من الحقول الفارغة
             if (n.isEmpty() || a.isEmpty() || d.isEmpty()) {
 
                 Toast.makeText(this,
                         "Remplissez tous les champs",
                         Toast.LENGTH_SHORT).show();
+                return;
+            }
 
-            } else {
+            // 6. التحقق من صحة السنوات
+            try {
 
-                // 5. تحويل السنوات إلى أعداد
                 int anneeNaissance = Integer.parseInt(a);
                 int anneeDestination = Integer.parseInt(d);
 
-                // 6. التحقق من السنوات
+                if (anneeNaissance <= 0 || anneeDestination <= 0) {
+
+                    Toast.makeText(this,
+                            "Les années doivent être positives",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 if (anneeDestination <= anneeNaissance) {
 
                     Toast.makeText(this,
                             "L'année de destination doit être supérieure à l'année de naissance",
                             Toast.LENGTH_LONG).show();
-
-                } else {
-
-                    // 7. رقم matricule
-                    String matricule = "9425";
-
-                    // 8. فتح الواجهة الثانية
-                    Intent intent = new Intent(MainActivity.this,
-                            VerificationActivity.class);
-
-                    // 9. إرسال المعلومات
-                    intent.putExtra(construireCle(matricule, "NOM_VOYAGEUR"), n);
-                    intent.putExtra(construireCle(matricule, "ANNEE_NAISSANCE"), a);
-                    intent.putExtra(construireCle(matricule, "ANNEE_DESTINATION"), d);
-                    intent.putExtra(construireCle(matricule, "MOTIF"), m);
-
-                    startActivity(intent);
+                    return;
                 }
+
+                // 7. رقم matricule
+                String matricule = "9425";
+
+                // 8. فتح الواجهة الثانية
+                Intent intent = new Intent(MainActivity.this,
+                        VerificationActivity.class);
+
+                // 9. إرسال المعلومات
+                intent.putExtra(construireCle(matricule, "NOM_VOYAGEUR"), n);
+                intent.putExtra(construireCle(matricule, "ANNEE_NAISSANCE"), a);
+                intent.putExtra(construireCle(matricule, "ANNEE_DESTINATION"), d);
+                intent.putExtra(construireCle(matricule, "MOTIF"), m);
+
+                startActivity(intent);
+
+            } catch (NumberFormatException e) {
+
+                Toast.makeText(this,
+                        "Veuillez saisir des années valides",
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }
 }
+
