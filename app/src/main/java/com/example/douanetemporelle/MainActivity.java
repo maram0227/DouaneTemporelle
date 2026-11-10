@@ -61,20 +61,34 @@ public class MainActivity extends AppCompatActivity {
 
             } else {
 
-                // 5. رقم matricule
-                String matricule = "9425";
+                // 5. تحويل السنوات إلى أعداد
+                int anneeNaissance = Integer.parseInt(a);
+                int anneeDestination = Integer.parseInt(d);
 
-                // 6. فتح الواجهة الثانية
-                Intent intent = new Intent(MainActivity.this,
-                        VerificationActivity.class);
+                // 6. التحقق من السنوات
+                if (anneeDestination <= anneeNaissance) {
 
-                // 7. إرسال المعلومات
-                intent.putExtra(construireCle(matricule, "NOM_VOYAGEUR"), n);
-                intent.putExtra(construireCle(matricule, "ANNEE_NAISSANCE"), a);
-                intent.putExtra(construireCle(matricule, "ANNEE_DESTINATION"), d);
-                intent.putExtra(construireCle(matricule, "MOTIF"), m);
+                    Toast.makeText(this,
+                            "L'année de destination doit être supérieure à l'année de naissance",
+                            Toast.LENGTH_LONG).show();
 
-                startActivity(intent);
+                } else {
+
+                    // 7. رقم matricule
+                    String matricule = "9425";
+
+                    // 8. فتح الواجهة الثانية
+                    Intent intent = new Intent(MainActivity.this,
+                            VerificationActivity.class);
+
+                    // 9. إرسال المعلومات
+                    intent.putExtra(construireCle(matricule, "NOM_VOYAGEUR"), n);
+                    intent.putExtra(construireCle(matricule, "ANNEE_NAISSANCE"), a);
+                    intent.putExtra(construireCle(matricule, "ANNEE_DESTINATION"), d);
+                    intent.putExtra(construireCle(matricule, "MOTIF"), m);
+
+                    startActivity(intent);
+                }
             }
         });
     }
