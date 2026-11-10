@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
         // 4. زر الانتقال إلى واجهة التحقق
         btn.setOnClickListener(v -> {
 
-            String n = nom.getText().toString();
-            String a = naissance.getText().toString();
-            String d = destination.getText().toString();
+            String n = nom.getText().toString().trim();
+            String a = naissance.getText().toString().trim();
+            String d = destination.getText().toString().trim();
             String m = motif.getSelectedItem().toString();
 
             if (n.isEmpty() || a.isEmpty() || d.isEmpty()) {
